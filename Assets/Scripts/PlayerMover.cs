@@ -20,5 +20,11 @@ public class PlayerMover : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
 		gameObject.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
 	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.tag == "Exit") {
+			Application.LoadLevel(Application.loadedLevel + 1);
+		}
+	}
 	
 }
