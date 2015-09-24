@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class LightMechanics : MonoBehaviour {
-
+	
 	public Light matchLight;
 	public UnityEngine.UI.Text matchText;
 	private bool lightingUp;
@@ -11,7 +11,7 @@ public class LightMechanics : MonoBehaviour {
 	private int timer;
 	private int matchCooldown;
 	private int matches;
-
+	
 	void Start() {
 		timer = 0;
 		lightingUp = false;
@@ -21,7 +21,7 @@ public class LightMechanics : MonoBehaviour {
 		matches = 1;
 		matchText.text = "Matches: " + matches;
 	}
-
+	
 	void Update() {
 		if (lightingUp) {
 			matchLight.intensity += 0.02f;
@@ -66,7 +66,7 @@ public class LightMechanics : MonoBehaviour {
 			matchCooldown--;
 		}
 	}
-
+	
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "Match") {
 			GameObject.Destroy (other.gameObject);
@@ -74,5 +74,5 @@ public class LightMechanics : MonoBehaviour {
 			matchText.text = "Matches: " + matches;
 		}
 	}
-
+	
 }
