@@ -23,6 +23,9 @@ public class LightMechanics : MonoBehaviour {
 	}
 	
 	void Update() {
+		if (timer != 0) {
+			matchLight.intensity += Random.Range(-0.1f, 0.1f);
+		}
 		if (lightingUp) {
 			matchLight.intensity += 0.02f;
 			timer++;
@@ -45,6 +48,7 @@ public class LightMechanics : MonoBehaviour {
 			else if(lightingDown) {
 				lightingDown = false;
 				timer = 0;
+				matchLight.intensity = 0.0f;
 				Debug.Log("Lighting down completed");
 			}
 			else if(waiting) {
