@@ -4,6 +4,7 @@ using System.Collections;
 public class LightMechanics : MonoBehaviour {
 	
 	public Light matchLight;
+	public AudioSource matchAudio;
 	public UnityEngine.UI.Text matchText;
 	private bool lightingUp;
 	private bool lightingDown;
@@ -28,10 +29,12 @@ public class LightMechanics : MonoBehaviour {
 		}
 		if (lightingUp) {
 			matchLight.intensity += 0.02f;
+			matchAudio.volume += 0.0025f;
 			timer++;
 		}
 		if (lightingDown) {
 			matchLight.intensity -= 0.02f;
+			matchAudio.volume -= 0.0025f;
 			timer++;
 		}
 		if (waiting) {
