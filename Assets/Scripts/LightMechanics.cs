@@ -56,7 +56,7 @@ public class LightMechanics : MonoBehaviour {
 		}
 		
 		if (Input.GetKey ("space") && matchCooldown == 0 && matches > 0) {
-			matchCooldown = 1200;
+			matchCooldown = 1250;
 			lightingUp = true;
 			matches--;
 			matchText.text = "Matches: " + matches;

@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
 		quitCooldown = 0;
 		resetText.text = "Resets: " + resets;
 		quitConfirmText.text = "";
+		Cursor.visible = false;
 	}
 	
 	void Update() {
